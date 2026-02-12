@@ -7,7 +7,7 @@ full = ""
 total_loc = 0
 
 for file_path in sorted(main_path.rglob("*.py")):
-    if file_path.name == txt_path.name or file_path.name == "vibe-coder.py":
+    if file_path.name == txt_path.name or file_path.name == "vibe-coder.py" or file_path.name == "__init__.py":
         continue
     elif file_path.parent.name == "tests":
         continue
