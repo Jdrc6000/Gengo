@@ -13,9 +13,16 @@ for file_path in sorted(main_path.rglob("*.py")):
         continue
 
     content_text = file_path.read_text(encoding="utf-8")
-    content = f"--- {file_path.relative_to(main_path)} ---\n{content_text}\n\n"
+    
+    filtered_lines = [
+        line for line in content_text.splitlines()
+        if not line.strip().startswith("#")
+    ]
+    filtered_content = "\n".join(filtered_lines)
+    
+    content = f"--- {file_path.relative_to(main_path)} ---\n{filtered_content}\n\n"
 
-    current_loc = content_text.count("\n") + 1
+    current_loc = filtered_content.count("\n") + 1
     full += content
     total_loc += current_loc
 
