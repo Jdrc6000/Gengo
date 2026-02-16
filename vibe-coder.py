@@ -1,7 +1,7 @@
 from pathlib import Path
 import re
 
-main_path = Path("/Users/joshuacarter/Desktop/Coding/Code Vault/projects/gengo")
+main_path = Path("/Users/joshuacarter/Desktop/Coding/Code Vault/projects/forge")
 txt_path = main_path / "vibe-coded.txt"
 
 full = ""
